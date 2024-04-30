@@ -227,7 +227,6 @@ export function withSentryRouting<P extends Record<string, any>, R extends React
   const WrappedRoute: React.FC<P> = (props: P) => {
     if (props && props.computedMatch && props.computedMatch.isExact) {
       const route = props.computedMatch.path;
-
       const activeRootSpan = getActiveRootSpan();
 
       getCurrentScope().setTransactionName(route);
